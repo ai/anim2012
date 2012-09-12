@@ -1,0 +1,23 @@
+@import 'compass/css3'
+@import 'ceaser-easing'
+
+@function font($path, $type)
+  @return url("#{ font-url($path, $type) }")
+
+@function image($path)
+  @return image-url($path)
+
+@mixin narrow-font
+  font-family: 'PT Sans Narrow', sans-serif
+  font-weight: bold
+
+@mixin standard-font
+  font-family: 'PT Sans', sans-serif
+
+@mixin background-image($path)
+  width: image-width($path)
+  height: image-height($path)
+  background: image($path) no-repeat
+
+@mixin stroke-text($color)
+  text-shadow: $color 1px 0 1px, $color 0 1px 1px, $color -1px 0 1px, $color 0 -1px 1px

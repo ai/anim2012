@@ -1,0 +1,40 @@
+doctype 5
+html lang="ru"
+  head
+    meta charset="UTF-8"
+    title Анимации по-новому — лень, гордыня и нетерпимость
+    meta name="viewport" content="width=1274, user-scalable=no"
+    - if production?
+      - google_fonts.each do |i|
+        link rel="stylesheet" href="http://fonts.googleapis.com/css?#{i}"
+      script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"
+    style
+      = include_style 'style'
+      = slides_styles
+  body.list
+
+    header.caption
+      h1 Анимации по-новому — лень, гордыня и нетерпимость
+      p
+        | <a href="http://sitnik.ru/">Андрей Ситник</a>,
+          <a href="evilmartians.ru">Злые марсиане</a>
+
+    - slides.each_with_index do |slide, i|
+      section.slide id=(i + 1) class="#{slide.name}-slide#{slide.types}"
+        - if slide.title
+          h2= slide.title
+        = slide.html
+
+    .progress
+      div
+
+    - unless production?
+      style
+        = include_style 'fonts'
+    script
+      = compress_js do
+        - unless production?
+          = include_js 'jquery'
+        = include_js 'shower/script'
+        = include_js 'action'
+        = slides_jses
