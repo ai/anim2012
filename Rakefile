@@ -33,11 +33,11 @@ end
 
 Slide = Struct.new(:name, :title, :types, :html, :file) do
   def style
-    file.dirname.join("#{name}.css.sass")
+    file.dirname.join("#{name}.sass")
   end
 
   def js
-    file.dirname.join("#{name}.js.coffee")
+    file.dirname.join("#{name}.coffee")
   end
 
   def name
@@ -74,7 +74,7 @@ class Environment
     if file
       file.read
     else
-      file = find_asset(path + '.css.sass')
+      file = find_asset(path + '.sass')
       compile(file) if file
     end
   end
@@ -84,7 +84,7 @@ class Environment
     if file
       file.read
     else
-      file = find_asset(path + '.js.coffee')
+      file = find_asset(path + '.coffee')
       compile(file) if file
     end
   end
@@ -204,7 +204,7 @@ class Environment
   end
 
   def layout_file
-    COMMON.join('layout.html.slim')
+    COMMON.join('layout.slim')
   end
 
   def build!
