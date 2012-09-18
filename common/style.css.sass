@@ -9,6 +9,8 @@
 .list
   background-image: image("vendor/shower/linen.png")
 
-.slide.cover
-  img, svg, video, object
-    left: 0
+.full
+  .slide.shout
+    z-index: 0
+    &:after
+      content: counter(paging, decimal-leading-zero)
