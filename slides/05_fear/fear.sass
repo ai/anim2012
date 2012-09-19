@@ -1,0 +1,30 @@
+.fear-slide.slide
+  .example
+    +background-image("slides/05_fear/site.jpg", 2)
+    float: left
+    position: relative
+    overflow: hidden
+    .shadow
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      background: black
+      opacity: 0
+    .popup
+      position: absolute
+      left: 60px
+      +background-image("slides/05_fear/popup.png", 2)
+      top: -170px
+    &.signin
+      .shadow
+        opacity: 0.8
+      .popup
+        top: 80px
+    &.animated
+      float: right
+      .shadow
+        +transition(opacity 800ms)
+      .popup
+        +transition(top 800ms)

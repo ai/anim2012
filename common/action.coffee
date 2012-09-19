@@ -17,18 +17,12 @@ window.presentation =
           closeCallback() unless s.hasClass("#{name}-slide")
       slide.every = (ms, fn) ->
         slide.open ->
-          slide.watcher = setInterval(fn, 100)
+          slide.watcher = setInterval(fn, ms)
         slide.close ->
           clearInterval(slide.watcher) if slide.watcher
 
       finder = (selector) -> $(selector, slide)
       callback($, finder, slide)
-
-  prefix: ->
-    return 'moz'    if $.browser.mozilla
-    return 'webkit' if $.browser.webkit
-    return 'o'      if $.browser.opera
-    return 'ms'     if $.browser.msie
 
 jQuery ($) ->
 

@@ -14,10 +14,11 @@
 @mixin standard-font
   font-family: 'PT Sans', sans-serif
 
-@mixin background-image($path)
-  width: image-width($path)
-  height: image-height($path)
+@mixin background-image($path, $scale: 1)
+  width: image-width($path) / $scale
+  height: image-height($path) / $scale
   background: image($path) no-repeat
+  background-size: 100% 100%
 
 @mixin stroke-text($color)
   text-shadow: $color 1px 0 1px, $color 0 1px 1px, $color -1px 0 1px, $color 0 -1px 1px
