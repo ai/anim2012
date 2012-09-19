@@ -10,10 +10,14 @@
   background-image: image("vendor/shower/linen.png")
 
 .full
-  .slide.shout
-    z-index: 0
+  .slide
     &:after
-      content: counter(paging, decimal-leading-zero)
-    h2
-      margin-top: -40px
-      font-size: 90px
+      left: 80px
+      bottom: 37px
+    &.shout
+      z-index: 0
+      &:after
+        content: counter(paging, decimal-leading-zero)
+      h2
+        margin-top: -40px
+        font-size: 90px
