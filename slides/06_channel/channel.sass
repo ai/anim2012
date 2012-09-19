@@ -1,0 +1,51 @@
+.channel-slide.slide
+  .example
+    margin: 70px
+    background: image("slides/05_fear/popup.png")
+    width: 226px
+    height: 155px
+    background-position: -9px -40px
+    float: left
+    border-radius: 20px
+    position: relative
+    box-shadow: 0 0 5px black(0.4)
+    .email
+      background: white
+      position: absolute
+      top: 52px
+      left: 30px
+      font-size: 10px
+      line-height: 1
+      padding: 4px 50px 2px 0
+    .password, .wrong
+      background: white
+      position: absolute
+      top: 83px
+      left: 30px
+      font-size: 10px
+      line-height: 1
+      padding: 4px 50px 2px 0
+    .wrong
+      color: #c00
+      padding-right: 0
+      display: none
+    &.bad .wrong
+      display: block
+    &.animated
+      float: right
+      &.bad
+        +animation(channel-shaking 1100ms)
+
++keyframes(channel-shaking)
+  0%
+    left: 0
+  20%
+    left: -60px
+  40%
+    left: 45px
+  60%
+    left: -15px
+  80%
+    left: 5px
+  100%
+    left: 0
