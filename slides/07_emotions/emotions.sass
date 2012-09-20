@@ -1,0 +1,49 @@
+.emotions-slide.slide
+  .example
+    float: left
+    width: (384px / 1.5)
+    height: (384px / 1.5)
+    position: relative
+    margin: 40px 40px 0 40px
+    &.animated
+      float: right
+      .card
+        +transition(all 700ms)
+    &.rotated
+      .front
+        display: none
+      .back
+        display: block
+  .front, .back, .card
+    width: 100%
+    height: 100%
+    position: absolute
+  .front
+    background: image("slides/07_emotions/front.png")
+  .back
+    background: image("slides/07_emotions/back.png")
+    display: none
+  .front, .back
+    background-size: 100% 100%
+
+.enabled3d .emotions-slide.slide
+  .example
+    +perspective(800px)
+    &.animated
+      .card
+        +transform-style(preserve-3d)
+        -webkit-transform-origin: right center
+        -moz-transform-origin: right center
+        -ms-transform-origin: right center
+        -o-transform-origin: right center
+        transform-origin: right center
+      &.rotated
+        .card
+          +transform( translateX( -100% ) rotateY(-180deg) )
+        .front
+          display: block
+      .back
+        display: block
+        +rotateY(180deg)
+      .front, .back
+        +backface-visibility(hidden)
