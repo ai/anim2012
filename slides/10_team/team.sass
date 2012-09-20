@@ -1,0 +1,52 @@
+.team-slide.slide
+  .team
+    position: relative
+    .cirle
+      width: 150px
+      height: 150px
+      line-height: 150px
+      text-align: center
+      +border-radius(50%)
+      display: inline-block
+      margin-left: -30px
+      border: 4px solid black
+      position: relative
+      font-size: 15px
+      .arrow
+        position: absolute
+        font-size: 25px
+        top: -2px
+        right: -2px
+        z-index: 10
+      &:first-child
+        margin-left: 0
+    .designer
+      border-color: #ff8800
+      background-color: rgba(255, 136, 0, 0.5)
+    .frontend
+      border-color: #669900
+      background-color: rgba(102, 153, 0, 0.5)
+    .programmer
+      border-color: #0099cc
+      background-color: rgba(0, 153, 204, 0.5)
+    .desc
+      position: absolute
+      top: 5px
+      right: 50px
+      height: 150px
+      line-height: 150px
+      font-size: 22px
+
+  .team.bad
+    margin-top: 70px
+    .manager
+      display: inline-block
+      border: 4px solid #ccad00
+      background-color: rgba(216, 203, 0, 0.5)
+      font-size: 15px
+      text-align: center
+      height: 50px
+      line-height: 50px
+      +rotate(90deg)
+      width: 150px
+      margin: 0 -35px 0 -65px
