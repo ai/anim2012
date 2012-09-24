@@ -1,3 +1,3 @@
 presentation.slide 'more', ($, $$, slide) ->
 
-  slide.every 3000, -> slide.toggleClass('rotated')
+  slide.every 4500, -> slide.toggleClass('rotated')
