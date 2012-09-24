@@ -17,7 +17,9 @@ window.presentation =
           closeCallback() unless s.hasClass("#{name}-slide")
       slide.every = (ms, fn) ->
         slide.open ->
-          slide.watcher = setInterval(fn, ms)
+          slide.watcher = after (ms / 3), ->
+            fn()
+            slide.watcher = setInterval(fn, ms)
         slide.close ->
           clearInterval(slide.watcher) if slide.watcher
 
