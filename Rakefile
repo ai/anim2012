@@ -48,10 +48,6 @@ end
 class Environment
   attr_accessor :slides
 
-  def initialize(build_type = 'development')
-    @build_type = build_type
-  end
-
   def name(value);  @name = value; end
   def title(value); @title = value; end
 
@@ -207,9 +203,14 @@ class Environment
     COMMON.join('layout.slim')
   end
 
-  def build!
+  def clean!
     PUBLIC.mkpath
     PUBLIC.glob('*') { |i| i.rmtree }
+    self
+  end
+
+  def build!(build_type = 'development')
+    @build_type = build_type
 
     @slides = []
     SLIDES.glob('**/*.slim').sort.each { |i| slide(i) }
@@ -220,18 +221,19 @@ class Environment
         image.to_s.start_with? PUBLIC.to_s
       end
     end
+
+    if standalone?
+      `zip -j public/anim2012.zip public/anim2012.html`
+      FileUtils.rm PUBLIC.join('anim2012.html')
+    end
+
     self
   end
 end
 
 desc 'Build site files'
 task :build do
-  print 'build'
-
-  env = Environment.new(ENV['build'] || 'standalone').build!
-  `zip -j public/anim2012.zip public/anim2012.html` if env.standalone?
-
-  print "\n"
+  Environment.new.clean!.build!('standalone').build!('production')
 end
 
 desc 'Run server for development'
@@ -240,7 +242,7 @@ task :server do
 
   class WebSlides < Sinatra::Base
     get '/' do
-      slides_env.build!
+      slides_env.clean!.build!
       send_file PUBLIC.join('index.html')
     end
 
