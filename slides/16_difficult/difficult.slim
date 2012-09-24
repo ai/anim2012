@@ -1,0 +1,43 @@
+- title 'JS: Сложнее'
+
+ul
+  li Нужно уметь программировать
+  li Нужно описывать алгоритм, а не как это выглядит
+
+pre
+  code if app.media('transform-3d')
+  code   opensource.addClass('animated3d')
+  code   transform = app.css3prop('transform')
+
+  code   light     = $$('.light')
+  code   shadow    = $$('.shadow')
+  code   corner    = $$('.corner')
+  code   animation =  $({ i: 0 })
+
+  code   link.hover ->
+  code     back = !link.is(':hover')
+
+  code     link.removeClass('bended') if back
+  code     animation.stop().animate { i: (if back then 0 else 1) },
+  code       duration: 600
+  code       easing:  'easeInOutQuad'
+  code       step: (i) ->
+  code         angle = Math.round(180 * i)
+  code         corner.css(transform, "rotate3d(1, 1, 0, \#{angle}deg)")
+  code         if i < 0.5
+  code           light.css(opacity: 2 * i)
+  code           shadow.css(opacity: 0)
+  code         else
+  code           light.css(opacity: 0)
+  code           shadow.css(opacity: (1 - i) / 6)
+  code         if i > 0.85 and not back
+  code           link.addClass('bended')
+
+  code   link.mousedown ->
+  code     corner.css(transform, 'rotate3d(1, 1, 0, 190deg)')
+  code     link.removeClass('bended')
+  code   link.mouseup ->
+  code     corner.css(transform, 'rotate3d(1, 1, 0, 180deg)')
+  code     link.addClass('bended')
+  code else
+  code   link.addClass('animated2d')

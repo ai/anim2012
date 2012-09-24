@@ -1,4 +1,9 @@
-- title 'Нужно думать об остановке анимации'
+- title 'JS: Нужно думать об остановке анимации'
 
 pre
-  code b.<mark>stop()</mark>.animate({ left: 100 })
+  code b.mouseenter(function () {
+  code   b.<mark>stop()</mark>.animate({ left: 100 });
+  code });
+  code b.mouseleave(function () {
+  code   b.<mark>stop()</mark>.animate({ left: 0 });
+  code });
