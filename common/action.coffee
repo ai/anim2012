@@ -1,5 +1,5 @@
-after = (ms, fn) -> setTimeout(fn, ms)
-every = (ms, fn) -> setInterval(fn, ms)
+window.after = (ms, fn) -> setTimeout(fn, ms)
+window.every = (ms, fn) -> setInterval(fn, ms)
 
 # Удобства для написания скриптов слайдов
 
