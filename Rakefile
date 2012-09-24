@@ -173,6 +173,10 @@ class Environment
     @cover  = name
   end
 
+  def include_counter
+    COMMON.join('_counter.html').read
+  end
+
   def standalone?
     @build_type == 'standalone'
   end

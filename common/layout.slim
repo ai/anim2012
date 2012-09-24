@@ -11,6 +11,8 @@ html lang="ru"
     style
       = include_style 'style'
       = slides_styles
+    - unless development?
+      = include_counter
   body.list
 
     header.caption
