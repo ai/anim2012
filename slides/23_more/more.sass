@@ -4,12 +4,20 @@
     -webkit-transition-property: left, -webkit-transform, margin-left
     -o-transition-property: left, -o-transform, margin-left
     transition-property: left, transform, margin-left
-    +transition-delay("0, 1s, 2s")
+    +transition-delay("200ms, 1200ms, 2200ms")
     +transition-duration(1s)
     position: relative
     left: 355px
+  .cursor
+    +background-image("common/cursor.png")
+    position: absolute
+    left: 510px
+    top: 550px
+    +transition(top 400ms)
 
 .enabled3d .more-slide.slide.rotated
+  .cursor
+    top: 510px
   .example
     left: 355px + 200px
     +rotateY(180deg)
