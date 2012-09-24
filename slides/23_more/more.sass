@@ -1,0 +1,16 @@
+.more-slide.slide
+  .example
+    +background-image("slides/23_more/robot.png", 2)
+    -webkit-transition-property: left, -webkit-transform, margin-left
+    -o-transition-property: left, -o-transform, margin-left
+    transition-property: left, transform, margin-left
+    +transition-delay("0, 1s, 2s")
+    +transition-duration(1s)
+    position: relative
+    left: 355px
+
+.enabled3d .more-slide.slide.rotated
+  .example
+    left: 355px + 200px
+    +rotateY(180deg)
+    margin-left: -200px
