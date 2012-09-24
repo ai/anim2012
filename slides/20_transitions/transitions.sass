@@ -1,0 +1,59 @@
+.transitions-slide.slide
+  code
+    font-size: 23px
+  .red
+    color: #c30
+  .blue
+    color: #09c
+  .example
+    position: absolute
+    top: 175px
+    left: 630px
+    width: 100px
+    height: 100px
+    background: #09c
+    +transition(background 1s)
+  &.colored .example
+    background: #c30
+  .cursor
+    +background-image("slides/20_transitions/cursor.png")
+    position: absolute
+    top: 285px
+    left: 680px
+    +transition(top 400ms linear)
+  &.cursored .cursor
+    top: 265px
+  .timeline
+    position: absolute
+    top: 175px
+    left: 830px
+    width: 10px
+    height: 300px
+    +background( linear-gradient(#09c, #09c 100px, #c30 200px, #c30) )
+  .hover
+    position: absolute
+    left: 25px
+    top: 100px
+    line-height: 20px
+    margin-top: -12px
+    font-size: 18px
+  .mark
+    position: absolute
+    left: 0
+    width: 20px
+    height: 1px
+    background: black
+  .hover-start
+    top: 100px
+  .hover-end
+    top: 200px
+  .time
+    position: absolute
+    right: 15px
+    font-size: 14px
+    line-height: 20px
+    margin-top: -11px
+  .start
+    top: 100px
+  .end
+    top: 200px
