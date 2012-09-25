@@ -1,13 +1,25 @@
 .more-slide.slide
+  code
+    line-height: 36px
+    font-size: 22px
   .example
+    -webkit-transition: -webkit-transform 1s
+    -o-transition: -o-transform 1s
+    transition: transform 1s
+    position: relative
+    left: 335px
+    top: -20px
+    width: image-width("slides/23_more/robot.png") / 2
+    height: image-height("slides/23_more/robot.png") / 2
+  .image
     +background-image("slides/23_more/robot.png", 2)
+    position: relative
+    left: 20px
+  &.rotated .example
     -webkit-transition-property: left, -webkit-transform, margin-left
     -o-transition-property: left, -o-transform, margin-left
     transition-property: left, transform, margin-left
     +transition-delay("200ms, 1200ms, 2200ms")
-    +transition-duration(1s)
-    position: relative
-    left: 355px
   .cursor
     +background-image("common/cursor.png")
     position: absolute
@@ -17,8 +29,8 @@
 
 .enabled3d .more-slide.slide.rotated
   .cursor
-    top: 510px
+    top: 520px
   .example
-    left: 355px + 200px
+    left: 335px + 200px
     +rotateY(180deg)
     margin-left: -200px
