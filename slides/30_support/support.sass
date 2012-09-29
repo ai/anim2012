@@ -1,0 +1,61 @@
+.slide.support-slide
+  .browsers
+    margin: 130px 0 0 -80px
+    text-align: center
+    font-size: 30px
+  .browser
+    margin: 0 0 0 80px
+    display: inline-block
+    padding-top: 100px
+    position: relative
+    width: 100px
+    img
+      position: absolute
+      top: 0
+      left: 0
+    &.msie img
+      left: -10px
+    &.ios img
+      top: 4px
+      left: 2px
+    &.android img
+      left: 5px
+    .current, .beta
+      position: absolute
+      width: 130px
+      left: -15px
+      font-size: 24px
+      text-align: left
+    .current
+      top: 115px
+    .beta
+      top: 145px
+    .version
+      float: left
+      text-align: right
+      width: 35px
+      +narrow-font
+      margin: 5px 8px 0 0
+      font-size: 16px
+    .status
+      position: relative
+    .ok
+      color: #6dcc00
+      top: -2px
+    .no
+      color: #c30
+      top: -1px
+    .prefixed
+      font-size: 18px
+      top: 2px
+  .ff
+    .current, .beta
+      left: -5px
+  .opera
+    .current, .beta
+      left: 6px
+  .msie
+    img
+      opacity: 0.6
+    .current, .beta
+      left: 15px

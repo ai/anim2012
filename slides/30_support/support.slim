@@ -1,0 +1,35 @@
+- title 'Поддержка'
+
+.browsers
+  .browser.chrome
+    = image_tag 'chrome.png'
+    .current
+      .version 22:
+      .status.prefixed -webkit-
+    .beta
+      .version 23:
+      .status.prefixed -webkit-
+  .browser.ff
+    = image_tag 'mozilla.png'
+    .current
+      .version 15:
+      .status.prefixed -moz-
+    .beta
+      .version 16:
+      .status.ok ✔
+  .browser.opera
+    = image_tag 'opera.png'
+    .current
+      .version 12:
+      .status.prefixed -o-
+    .beta
+      .version 12.5:
+      .status.ok ✔
+  .browser.msie
+    = image_tag 'msie.png'
+    .current
+      .version 9:
+      .status.no ✗
+    .beta
+      .version 10:
+      .status.ok ✔
