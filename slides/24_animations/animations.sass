@@ -1,0 +1,96 @@
+.animations-slide.slide
+  code
+    font-size: 20px
+    line-height: 36px
+  .red
+    color: #c30
+  .blue
+    color: #09c
+  .green
+    color: #3c0
+  .timeline
+    position: absolute
+    top: 170px
+    right: 340px
+    width: 10px
+    height: 385px
+  .div
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    +background( linear-gradient(gray, gray 40px, #3c0 40px, #3c0) )
+  .animation
+    position: absolute
+    top: 80px
+    left: 15px
+    width: 10px
+    height: 240px
+    +background( linear-gradient(#c30, #09c 80px, #c30 80px, #09c 160px, #c30 160px, #09c) )
+  .mark
+    position: absolute
+    left: 45px
+    line-height: 20px
+    margin-top: -12px
+    font-size: 18px
+    &::before
+      position: absolute
+      width: 45px
+      height: 1px
+      background: black
+      left: -55px
+      top: 11px
+      content: " "
+      opacity: 0.7
+    &.hover
+      top: 39px
+    &.start
+      top: 80px
+    &.anim1
+      top: 160px
+    &.anim2
+      top: 240px
+    &.anim3
+      top: 320px
+  .time
+    position: absolute
+    left: -60px
+    text-align: right
+    width: 40px
+    font-size: 16px
+    line-height: 1
+    &.delay
+      top: 51px
+    &.duration1
+      top: 108px
+    &.duration2
+      top: 108px + 80px
+    &.duration3
+      top: 108px + 160px
+  .example
+    position: absolute
+    top: 60px
+    left: 640px
+    width: 80px
+    height: 80px
+    background: gray
+  .cursor
+    +background-image("common/cursor.png")
+    position: absolute
+    top: 60px + 40px
+    left: 730px
+    +transition(left 400ms linear)
+  &.cursored .cursor
+    left: 710px
+  &.colored .example
+    background: #3c0
+    +animation(animations-backgrounding 1s)
+    +animation-delay(0.5s)
+    +animation-iteration-count(3)
+
++keyframes(animations-backgrounding)
+  0%
+    background: #09c
+  100%
+    background: #c30
