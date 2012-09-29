@@ -237,7 +237,12 @@ end
 
 desc 'Build site files'
 task :build do
-  Environment.new.clean!.build!('standalone').build!('production')
+  Environment.new.clean!.build!('production')
+end
+
+desc 'Build presentation all-in-one file'
+task :standalone do
+  Environment.new.clean!.build!('standalone')
 end
 
 desc 'Run server for development'
