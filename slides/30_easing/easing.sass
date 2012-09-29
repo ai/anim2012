@@ -1,0 +1,35 @@
+.easing-slide.slide
+  .example
+    width: 392px
+    float: left
+    padding-top: 150px
+    position: relative
+  .card
+    margin: 0 auto
+    position: relative
+    +background-image("slides/07_emotions/front.png", 2.5)
+  .front
+    position: absolute
+    top: -1px
+    left: -1px
+    width: 100%
+    height: 100%
+    background: #ccc
+    box-shadow: 0 0 3px black(0.3)
+    +transition(margin-top 2s linear)
+    border: 1px solid #999
+  .label
+    position: absolute
+    left: 0
+    top: 100%
+    margin-top: 10px
+    width: 100%
+    text-align: center
+    line-height: 40px
+  .better .front
+    +transition(margin-top 1s ceaser('easeOutBack'))
+  &.moved
+    .front
+      margin-top: -100%
+    .better .front
+      +transition(margin-top 3s ceaser('easeOutQuint'))
