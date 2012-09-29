@@ -7,6 +7,13 @@
     display: block
     border: none
     position: absolute
-    bottom: 50px
-    right: 125px
+    bottom: 50px - 3px
+    right: 125px - 3px
+    padding: 3px
+    border-radius: 5px
+    background: white(0)
+    +transition(background 200ms)
+    &:hover
+      background: white(0.2)
+  .image
     +background-image("slides/35_questions/evilmartians.png")
