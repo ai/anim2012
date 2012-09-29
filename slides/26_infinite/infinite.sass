@@ -1,0 +1,21 @@
+.infinite-slide.slide
+  code
+    font-size: 22px
+    line-height: 46px
+  .example
+    width: 200px
+    height: 200px
+    background: image("slides/26_infinite/ouroboros.svg")
+    position: absolute
+    top: 170px
+    right: 125px
+
+.full .infinite-slide.slide
+  .example
+    +animation(infinite-rotation 2s linear infinite)
+
++keyframes(infinite-rotation)
+  0%
+    +rotate(0)
+  100%
+    +rotate(360deg)
