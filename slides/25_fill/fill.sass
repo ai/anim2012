@@ -1,0 +1,33 @@
+.fill-slide.slide
+  .first
+    margin-top: 80px
+  ul
+    margin-top: 20px
+  li
+    position: relative
+  .example
+    position: absolute
+    top: 20px
+    left: 200px
+    width: 399px
+    height: 10px
+    background: gray
+  .start, .end
+    position: absolute
+    top: -10px
+    height: 30px
+    width: 1px
+    opacity: 0.7
+    background: black
+  .start
+    left: 133px
+  .end
+    left: 266px
+  .backwards .example
+    +background( linear-gradient(left, #09c, #09c 133px, #c30 266px, gray 266px, gray) )
+  .forwards .example
+    +background( linear-gradient(left, gray, gray 133px, #09c 133px, #c30 266px, #c30) )
+  .both .example
+    +background( linear-gradient(left, #09c, #09c 133px, #c30 266px, #c30) )
+  li code
+    background: #eee
