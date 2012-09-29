@@ -1,0 +1,10 @@
+- title 'Управляйте CSS-анимациями из JavaScript'
+
+pre
+  code $('a.signin').click(function () {
+  code   signinPopup.show().<mark>addClass('animated-show')</mark>;
+  code });
+  code $('a.close-popup').click(function () {
+  code   signinPopup.<mark>removeClass('animated-show')</mark>.
+  code     afterTransition(function () { signinPopup.hide() });
+  code });
