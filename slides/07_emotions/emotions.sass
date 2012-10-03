@@ -39,11 +39,11 @@
         transform-origin: right center
       &.rotated
         .card
-          +transform( translateX( -100% ) rotateY(-180deg) )
+          +transform( translateX(-100%) rotateY(-180deg) )
         .front
           display: block
       .back
-        display: block
+        display: none
         +rotateY(180deg)
       .front, .back
         +backface-visibility(hidden)
