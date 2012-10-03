@@ -144,13 +144,16 @@ class Environment
     end
   end
 
-  def image_tag(name, attrs = {})
+  def image_tag(name, attrs = { })
     attrs[:alt] ||= ''
     uri  = @current.dirname.join(name)
     type = file_type(uri)
     if type == 'image/gif'
       attrs[:class] = (attrs[:class] ? attrs[:class] + ' ' : '') + 'gif'
     end
+
+    return uri.read if name =~ /\.svg$/
+
     if standalone?
       uri = encode_image(uri, type)
     else
